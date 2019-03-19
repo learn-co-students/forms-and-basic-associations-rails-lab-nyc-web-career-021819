@@ -24,11 +24,6 @@ class Song < ActiveRecord::Base
     contents.each do |content|
       if content != ''
         note = Note.create(content: content)
-
-     # notes.split.reject(&:empty?)
-     # if notes.split.includes?(" ")
-     #   nil
-     # else
       self.notes << note
       end
 
