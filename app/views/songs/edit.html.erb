@@ -1,11 +1,11 @@
 <h1>Editing <%= @song.title %></h1>
 
-<%= form_for @song  do |f| %>
+<%= form_for @song do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
-  <br />
-
+  <%= f.label :artist %>
+  <%= f.select :artist_id, @artists.collect { |artist| [artist.name, artist.id] }, prompt: true  %>
+  <%= f.label :genre %>
+  <%= f.select :genre_id, @genres.collect { |genre| [genre.name, genre.id] }, prompt: true  %>
   <%= f.submit %>
 <% end %>
-
-
